@@ -11,6 +11,6 @@ public class Quote extends BaseEntity {
 	private String texte;
 	
 	 @ManyToOne
-	 @JoinColumn(name = "autor_id")
+	 @JoinColumn(name = "author_id")
 	 private Author autor;
 }

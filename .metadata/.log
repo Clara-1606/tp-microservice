@@ -5480,3 +5480,15 @@ org.eclipse.jface.text.BadLocationException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-01-31 12:25:39.032
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ciwGniqV
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-01-31 12:25:39.033
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.ciwGniqV
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-01-31 12:25:39.034
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-01-31 12:25:39.035
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ciwGniqV => OK
