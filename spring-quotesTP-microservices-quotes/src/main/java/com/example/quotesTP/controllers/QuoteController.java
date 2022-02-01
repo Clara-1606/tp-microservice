@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/quote")
+@RequestMapping("api/quotes")
 public class QuoteController
 {
     private final QuoteService quoteService;
@@ -20,7 +20,7 @@ public class QuoteController
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<Quote>> getAllQuote()
     {
-        return ResponseEntity.ok(QuoteService.getAllQuotes());
+        return ResponseEntity.ok(quoteService.getAllQuotes());
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST, produces = "application/json")

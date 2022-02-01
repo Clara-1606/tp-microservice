@@ -1,38 +1,61 @@
 package com.example.quotesTP.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.quotesTP.models.Author;
-import com.example.quotesTP.models.Quote;
 import com.example.quotesTP.models.Vote;
-import com.example.quotesTP.repositories.VoteRepository;
+import com.example.quotesTP.services.VoteService;
 
 @RestController
 @RequestMapping("api/votes")
 public class VoteController {
 
-	@Autowired
-	VoteRepository voteRepository;
-	
-	@PostMapping("/upvote")
-	public ResponseEntity<Vote> addUpVote(@RequestBody Vote vote) {
-		
-		voteRepository.save(vote);
-		return ResponseEntity.status(HttpStatus.CREATED).body(vote);
-	}
-	
-	@PostMapping("/downvote")
-	public ResponseEntity<Vote> addDownVote(@RequestBody Vote vote) {
-		
-		voteRepository.save(vote);
-		return ResponseEntity.status(HttpStatus.CREATED).body(vote);
-	}
+	private final VoteService voteService;
+
+    public VoteController(VoteService voteService) {
+        this.voteService = voteService;
+    }
+
+    @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<List<Vote>> getAllVote()
+    {
+        return ResponseEntity.ok(voteService.getAllVotes());
+    }
+
+    @RequestMapping(value = "/new", method = RequestMethod.POST, produces = "application/json")
+    public ResponseEntity createVote(@RequestBody Vote vote)
+    {
+        Vote newVote = voteService.createVote(vote);
+
+        if (newVote == null)
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+
+        return ResponseEntity.ok(newVote);
+    }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
+    public ResponseEntity deleteVote(@PathVariable("id") Long id)
+    {
+        if (voteService.deleteVote(id))
+            return  new ResponseEntity(HttpStatus.OK);
+
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity getVoteById(@PathVariable("id") Long id)
+    {
+        Vote vote = voteService.getById(id);
+        if (vote != null)
+            return ResponseEntity.ok(vote);
+
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    }
 }

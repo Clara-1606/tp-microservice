@@ -16,7 +16,7 @@ import lombok.Setter;
 public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer id;
+    protected Long id;
 
     @JsonIgnore
     public boolean isNew() {
