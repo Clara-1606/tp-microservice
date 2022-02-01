@@ -90,7 +90,7 @@
 				<version>${docker.jib-maven-plugin.version}</version>
 				<configuration>
 					<to>
-						<image>docker.io/${docker.image.prefix}/tp-microservices-b3</image>
+						<image>docker.io/${docker.image.prefix}/tp-microservices-b3-users</image>
 						<tags>
 							<tag>${project.version}</tag>
 							<tag>latest</tag>
