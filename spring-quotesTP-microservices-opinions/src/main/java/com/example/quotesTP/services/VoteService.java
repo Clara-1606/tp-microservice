@@ -1,0 +1,46 @@
+package com.example.quotesTP.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.example.quotesTP.models.Vote;
+import com.example.quotesTP.repositories.VoteRepository;
+
+@Service
+public class VoteService {
+	private final VoteRepository voteRepository;
+
+    public VoteService(VoteRepository voteRepository) {
+        this.voteRepository = voteRepository;
+    }
+
+    public List<Vote> getAllVotes()
+    {
+        return voteRepository.findAll();
+    }
+
+    public Vote createVote(Vote vote)
+    {
+        return voteRepository.save(vote);
+    }
+
+    public boolean deleteVote(Long id)
+    {
+        Optional<Vote> vote = voteRepository.findById(id);
+        if (vote.isPresent())
+            voteRepository.delete(vote.get());
+        return vote.isPresent();
+    }
+
+    public Vote getById(Long id)
+    {
+        Optional<Vote> vote = voteRepository.findById(id);
+
+        if (vote.isPresent())
+            return vote.get();
+        else
+            return null;
+    }
+}
