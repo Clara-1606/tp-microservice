@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-quotesTP-microservices-quotes" />
+        <module name="spring-quotesTP-rest" />
+        <module name="spring-quotesTP-microservices-opinions" />
+        <module name="spring-quotesTP-microservices-users" />
+        <module name="spring-quotesTP-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-quotesTP-gateway" target="11" />
+      <module name="spring-quotesTP-microservices-opinions" target="11" />
+      <module name="spring-quotesTP-microservices-quotes" target="11" />
+      <module name="spring-quotesTP-microservices-users" target="11" />
+      <module name="spring-quotesTP-rest" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-quotesTP-gateway" options="-parameters" />
+      <module name="spring-quotesTP-microservices-opinions" options="-parameters" />
+      <module name="spring-quotesTP-microservices-quotes" options="-parameters" />
+      <module name="spring-quotesTP-microservices-users" options="-parameters" />
+      <module name="spring-quotesTP-rest" options="-parameters" />
+    </option>
+  </component>
+</project>

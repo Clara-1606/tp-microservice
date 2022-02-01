@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-quotesTP-gateway/spring-quotesTP-gateway.iml" filepath="$PROJECT_DIR$/spring-quotesTP-gateway/spring-quotesTP-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-quotesTP-microservices-opinions/spring-quotesTP-microservices-opinions.iml" filepath="$PROJECT_DIR$/spring-quotesTP-microservices-opinions/spring-quotesTP-microservices-opinions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-quotesTP-microservices-quotes/spring-quotesTP-microservices-quotes.iml" filepath="$PROJECT_DIR$/spring-quotesTP-microservices-quotes/spring-quotesTP-microservices-quotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-quotesTP-microservices-users/spring-quotesTP-microservices-users.iml" filepath="$PROJECT_DIR$/spring-quotesTP-microservices-users/spring-quotesTP-microservices-users.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-quotesTP-rest/spring-quotesTP-rest.iml" filepath="$PROJECT_DIR$/spring-quotesTP-rest/spring-quotesTP-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tp-microservice.iml" filepath="$PROJECT_DIR$/.idea/tp-microservice.iml" />
+    </modules>
+  </component>
+</project>
