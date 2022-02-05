@@ -22,7 +22,7 @@ public class QuoteService
 
     public Quote createQuote(Quote quote)
     {
-        if (quote.getQuoteText() == null || quoteRepository.findQuoteByQuoteText(quote.getQuoteText()) != null)
+        if (quote.getQuoteText() == null)
             return null;
 
         return quoteRepository.save(quote);
@@ -44,5 +44,10 @@ public class QuoteService
             return quote.get();
         else
             return null;
+    }
+
+    public List<Quote> getQuotesByAuthorId(Long authorId)
+    {
+        return quoteRepository.findAllByAuthor_Id(authorId);
     }
 }

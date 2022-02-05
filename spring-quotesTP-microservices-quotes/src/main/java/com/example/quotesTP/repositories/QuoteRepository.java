@@ -16,5 +16,5 @@ public interface QuoteRepository extends JpaRepository<Quote, Long>
 
     void delete(Quote quote) throws DataAccessException;
 
-    Quote findQuoteByQuoteText(String QuoteText) throws DataAccessException;
+    List<Quote> findAllByAuthor_Id(Long authorId) throws DataAccessException;
 }

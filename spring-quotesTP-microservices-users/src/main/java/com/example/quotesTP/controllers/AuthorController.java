@@ -1,11 +1,14 @@
 package com.example.quotesTP.controllers;
 
 import com.example.quotesTP.models.Author;
+import com.example.quotesTP.models.Quote;
+import com.example.quotesTP.repositories.AuthorRepository;
 import com.example.quotesTP.services.AuthorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -14,8 +17,11 @@ public class AuthorController
 {
     private final AuthorService authorService;
 
-    public AuthorController(AuthorService authorService) {
+    private AuthorRepository authorRepository;
+
+    public AuthorController(AuthorService authorService, AuthorRepository authorRepository) {
         this.authorService = authorService;
+        this.authorRepository = authorRepository;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")

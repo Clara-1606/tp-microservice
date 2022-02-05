@@ -52,4 +52,14 @@ public class QuoteController
 
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
+
+    @RequestMapping(value = "/author/{id}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity getQuoteByAuthorId(@PathVariable("id") Long id)
+    {
+        List<Quote> quotes = quoteService.getQuotesByAuthorId(id);
+        if (quotes != null)
+            return ResponseEntity.ok(quotes);
+
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    }
 }
