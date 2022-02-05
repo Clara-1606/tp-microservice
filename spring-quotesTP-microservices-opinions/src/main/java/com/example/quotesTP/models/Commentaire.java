@@ -19,17 +19,10 @@ public class Commentaire extends BaseEntity {
 	@Column(name = "commentaire")
     @NotEmpty
 	private String commentaire;
-	
-	/*
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name = "author_id") private Author author;
-	 * 
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name = "quote_id") private Quote quote;
-	 */
 
-	    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
-	    //private Set<Visit> visits;
+	@ManyToOne
+	private Author author;
+
+	@ManyToOne
+	private Quote quote;
 }

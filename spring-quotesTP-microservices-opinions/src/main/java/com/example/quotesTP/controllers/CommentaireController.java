@@ -17,7 +17,7 @@ import com.example.quotesTP.services.CommentaireService;
 
 
 @RestController
-@RequestMapping("api/commentaires")
+@RequestMapping("api/comments")
 public class CommentaireController {
 
 	private final CommentaireService commentaireService;
