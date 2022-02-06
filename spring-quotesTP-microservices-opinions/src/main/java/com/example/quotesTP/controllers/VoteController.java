@@ -80,4 +80,12 @@ public class VoteController {
 
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
+
+    @RequestMapping(value = "/mostUpvotedQuotes", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity getMostUpvotedQuotes()
+    {
+        List<Long> ids = voteService.getMostUpvotedQuotesIds();
+
+        return ResponseEntity.ok(ids);
+    }
 }

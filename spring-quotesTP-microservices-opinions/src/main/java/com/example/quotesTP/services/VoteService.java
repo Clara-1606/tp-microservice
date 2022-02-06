@@ -69,4 +69,9 @@ public class VoteService {
 
         return ratio;
     }
+
+    public List<Long> getMostUpvotedQuotesIds()
+    {
+        return voteRepository.findTenMostUpVotedQuotesIds();
+    }
 }
