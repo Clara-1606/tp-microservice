@@ -33,7 +33,12 @@ public class AuthorService
     {
         Optional<Author> author = authorRepository.findById(id);
         if (author.isPresent())
+        {
+            author.get().getQuotes().forEach(quote -> quote.setAuthor(null));
+            authorRepository.save(author.get());
             authorRepository.delete(author.get());
+        }
+
         return author.isPresent();
     }
 
