@@ -50,4 +50,5 @@ public class QuoteService
     {
         return quoteRepository.findAllByAuthor_Id(authorId);
     }
+
 }

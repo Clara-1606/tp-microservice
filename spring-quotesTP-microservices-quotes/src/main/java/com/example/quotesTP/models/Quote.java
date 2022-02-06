@@ -3,12 +3,10 @@ package com.example.quotesTP.models;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,5 +22,4 @@ public class Quote extends BaseEntity {
 
     @ManyToOne
     private Author author;
-
 }
