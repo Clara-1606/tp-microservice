@@ -18,4 +18,6 @@ public interface VoteRepository extends JpaRepository<Vote, Long>{
 		long countByVoteTrueAndQuote_Author_Id(Long authorId) throws DataAccessException;
 
 		long countByVoteFalseAndQuote_Author_Id(Long authorId) throws DataAccessException;
+
+		long countByQuote_Author_Id(Long authorId) throws DataAccessException;
 }

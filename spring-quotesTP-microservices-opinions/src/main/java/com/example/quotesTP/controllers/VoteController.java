@@ -59,10 +59,21 @@ public class VoteController {
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(value = "/ratio/author/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity getAuthorRatio(@PathVariable("id") Long id)
+    @RequestMapping(value = "/upvoteRatio/author/{id}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity getAuthorUpvoteRatio(@PathVariable("id") Long id)
     {
-        float ratio = voteService.getAuthorVoteRatio(id);
+        float ratio = voteService.getAuthorUpvoteRatio(id);
+
+        if(ratio != 0)
+            return ResponseEntity.ok(ratio);
+
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/downvoteRatio/author/{id}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity getAuthorDownvoteRatio(@PathVariable("id") Long id)
+    {
+        float ratio = voteService.getAuthorDownvoteRatio(id);
 
         if(ratio != 0)
             return ResponseEntity.ok(ratio);
