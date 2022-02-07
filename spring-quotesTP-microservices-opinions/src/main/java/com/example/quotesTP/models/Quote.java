@@ -17,7 +17,7 @@ import javax.persistence.*;
 @Data
 public class Quote extends BaseEntity {
 
-    @Column(name = "quoteText")
+    @Column(name = "quote_text")
     private String quoteText;
 
     @ManyToOne

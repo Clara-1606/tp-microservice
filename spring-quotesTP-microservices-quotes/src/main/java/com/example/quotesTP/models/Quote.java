@@ -18,7 +18,7 @@ import java.util.List;
 @Data
 public class Quote extends BaseEntity {
 
-	@Column(name = "quoteText")
+	@Column(name = "quote_text")
     @NotEmpty
     private String quoteText;
 

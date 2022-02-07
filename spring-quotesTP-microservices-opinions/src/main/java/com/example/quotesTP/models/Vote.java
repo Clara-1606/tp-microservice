@@ -9,6 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "votes")
 public class Vote extends BaseEntity {
 	@Column(name = "vote")
 	private boolean vote;

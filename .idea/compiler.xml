@@ -10,8 +10,8 @@
         <module name="spring-quotesTP-microservices-quotes" />
         <module name="spring-quotesTP-rest" />
         <module name="spring-quotesTP-microservices-opinions" />
-        <module name="spring-quotesTP-microservices-users" />
         <module name="spring-quotesTP-gateway" />
+        <module name="spring-quotesTP-microservices-users" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
