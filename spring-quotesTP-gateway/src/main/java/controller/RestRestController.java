@@ -91,13 +91,13 @@ public class RestRestController {
         return oconsumer.getVoteById(id);
     }
 
-    @GetMapping("api/votes/upvoteRatio/author/{id}")
+    @GetMapping(value = "api/votes/upvoteRatio/author/{id}", produces = "application/json")
     public ResponseEntity findAuthorUpvoteRatio(@PathVariable("id") Long id) { return oconsumer.getAuthorUpvoteRatio(id); }
 
-    @GetMapping("api/votes/downvoteRatio/author/{id}")
+    @GetMapping(value = "api/votes/downvoteRatio/author/{id}", produces = "application/json")
     public ResponseEntity findAuthorDownvoteRatio(@PathVariable("id") Long id) { return oconsumer.getAuthorDownvoteRatio(id); }
 
-    @GetMapping("api/votes/mostUpvotedQuotes")
+    @GetMapping(value = "api/votes/mostUpvotedQuotes", produces = "application/json")
     public ResponseEntity findMostUpvotedQuotes() { return oconsumer.getMostUpvotedQuotes(); }
 
     @GetMapping("api/comments")

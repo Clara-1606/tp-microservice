@@ -16,11 +16,11 @@ public interface VoteRepository extends JpaRepository<Vote, Long>{
 
 	    void delete(Vote vote) throws DataAccessException;
 
-		long countByVoteTrueAndQuote_Author_Id(Long authorId) throws DataAccessException;
+		int countByVoteTrueAndQuote_Author_Id(Long authorId) throws DataAccessException;
 
-		long countByVoteFalseAndQuote_Author_Id(Long authorId) throws DataAccessException;
+		int countByVoteFalseAndQuote_Author_Id(Long authorId) throws DataAccessException;
 
-		long countByQuote_Author_Id(Long authorId) throws DataAccessException;
+		int countByVoteIsNotNullAndQuote_Author_Id(Long authorId) throws DataAccessException;
 
 		//select quote_id from vote where vote=1 group by quote_id order by count(*) desc limit 10;
 		@Query(value = "SELECT quote_id FROM votes WHERE vote=1 GROUP BY quote_id ORDER BY count(*) DESC LIMIT 10", nativeQuery = true)

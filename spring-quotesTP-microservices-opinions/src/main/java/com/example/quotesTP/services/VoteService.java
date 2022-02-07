@@ -46,9 +46,9 @@ public class VoteService {
 
     public float getAuthorUpvoteRatio(Long authorId)
     {
-        Long upvotes = voteRepository.countByVoteTrueAndQuote_Author_Id(authorId);
+        float upvotes = voteRepository.countByVoteTrueAndQuote_Author_Id(authorId);
 
-        Long total = voteRepository.countByQuote_Author_Id(authorId);
+        float total = voteRepository.countByVoteIsNotNullAndQuote_Author_Id(authorId);
 
         float ratio = upvotes;
         if (total > 0)
@@ -59,9 +59,9 @@ public class VoteService {
 
     public float getAuthorDownvoteRatio(Long authorId)
     {
-        Long downvotes = voteRepository.countByVoteFalseAndQuote_Author_Id(authorId);
+        float downvotes = voteRepository.countByVoteFalseAndQuote_Author_Id(authorId);
 
-        Long total = voteRepository.countByVoteFalseAndQuote_Author_Id(authorId);
+        float total = voteRepository.countByVoteIsNotNullAndQuote_Author_Id(authorId);
 
         float ratio = downvotes;
         if (total > 0)
