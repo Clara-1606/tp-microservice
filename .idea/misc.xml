@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/spring-quotesTP-microservices-quotes/pom.xml" />
         <option value="$PROJECT_DIR$/spring-quotesTP-microservices-opinions/pom.xml" />
         <option value="$PROJECT_DIR$/spring-quotesTP-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-quotesTP-service-discovery/pom.xml" />
       </list>
     </option>
   </component>

@@ -20,6 +20,7 @@ import java.util.List;
 public class Quote extends BaseEntity {
 
     @Column(name = "quote_text")
+    @NotEmpty
     private String quoteText;
 
     @ManyToOne

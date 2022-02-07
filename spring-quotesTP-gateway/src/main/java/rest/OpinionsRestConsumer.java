@@ -26,6 +26,15 @@ public interface OpinionsRestConsumer {
         @GetMapping("api/votes/{id}")
         public ResponseEntity getVoteById(@PathVariable("id") Long id);
 
+        @GetMapping("/api/upvoteRatio/author/{id}")
+        public ResponseEntity getAuthorUpvoteRatio(@PathVariable("id") Long id);
+
+        @GetMapping("/api/downvoteRatio/author/{id}")
+        public ResponseEntity getAuthorDownvoteRatio(@PathVariable("id") Long id);
+
+        @GetMapping("api/mostUpvotedQuotes")
+        public ResponseEntity getMostUpvotedQuotes();
+
         @GetMapping("api/commentaires")
         public ResponseEntity<List<Commentaire>> getAllCommentaire();
 

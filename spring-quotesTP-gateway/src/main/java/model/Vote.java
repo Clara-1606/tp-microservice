@@ -1,11 +1,8 @@
 package model;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+import com.example.quotesTP.models.Quote;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,5 +12,8 @@ import lombok.Setter;
 class Vote extends BaseEntity {
     @Column(name = "vote")
     private boolean vote;
+
+    @ManyToOne
+    private Quote quote;
 }
 

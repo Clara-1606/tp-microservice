@@ -1,5 +1,6 @@
 package model;
 
+import com.example.quotesTP.models.Author;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,8 +21,11 @@ import javax.validation.constraints.NotEmpty;
 @Data
 public class Quote extends BaseEntity {
 
-    @Column(name = "quoteText")
+    @Column(name = "quote_text")
     @NotEmpty
     private String quoteText;
+
+    @ManyToOne
+    private Author author;
 
 }

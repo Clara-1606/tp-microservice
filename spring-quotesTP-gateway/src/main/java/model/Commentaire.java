@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
 
+import com.example.quotesTP.models.Author;
+import com.example.quotesTP.models.Quote;
 import lombok.Getter;
 import lombok.Setter;
 import model.BaseEntity;
@@ -20,6 +22,12 @@ class Commentaire extends BaseEntity {
     @Column(name = "commentaire")
     @NotEmpty
     private String commentaire;
+
+    @ManyToOne
+    private Author author;
+
+    @ManyToOne
+    private Quote quote;
 
     /*
      * @ManyToOne

@@ -64,6 +64,10 @@ public class RestRestController {
         return qconsumer.getQuoteById(id);
     }
 
+    @GetMapping("api/author/{id}")
+    public ResponseEntity findQuotesByAuthorId(@PathVariable("id") Long id) { return qconsumer.getQuotesByAuthorId(id); }
+
+
     @Autowired
     private OpinionsRestConsumer oconsumer;
 
@@ -86,6 +90,15 @@ public class RestRestController {
     public ResponseEntity findVoteById(@PathVariable("id") Long id){
         return oconsumer.getVoteById(id);
     }
+
+    @GetMapping("api/upvoteRatio/author/{id}")
+    public ResponseEntity findAuthorUpvoteRatio(@PathVariable("id") Long id) { return oconsumer.getAuthorUpvoteRatio(id); }
+
+    @GetMapping("api/downvoteRatio/author/{id}")
+    public ResponseEntity findAuthorDownvoteRatio(@PathVariable("id") Long id) { return oconsumer.getAuthorDownvoteRatio(id); }
+
+    @GetMapping("api/mostUpvotedQuotes")
+    public ResponseEntity findMostUpvotedQuotes() { return oconsumer.getMostUpvotedQuotes(); }
 
     @GetMapping("api/commentaires")
     public ResponseEntity<List<Commentaire>> findAllCommentaire(){
