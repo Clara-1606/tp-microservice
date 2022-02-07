@@ -26,25 +26,25 @@ public interface OpinionsRestConsumer {
         @GetMapping("api/votes/{id}")
         public ResponseEntity getVoteById(@PathVariable("id") Long id);
 
-        @GetMapping("/api/upvoteRatio/author/{id}")
+        @GetMapping("/api/votes/upvoteRatio/author/{id}")
         public ResponseEntity getAuthorUpvoteRatio(@PathVariable("id") Long id);
 
-        @GetMapping("/api/downvoteRatio/author/{id}")
+        @GetMapping("/api/votes/downvoteRatio/author/{id}")
         public ResponseEntity getAuthorDownvoteRatio(@PathVariable("id") Long id);
 
-        @GetMapping("api/mostUpvotedQuotes")
+        @GetMapping("api/votes/mostUpvotedQuotes")
         public ResponseEntity getMostUpvotedQuotes();
 
-        @GetMapping("api/commentaires")
+        @GetMapping("api/comments")
         public ResponseEntity<List<Commentaire>> getAllCommentaire();
 
-        @GetMapping("api/commentaires/new")
+        @GetMapping("api/comments/new")
         public ResponseEntity createCommentaire(@RequestBody Commentaire commentaire);
 
-        @GetMapping("api/commentaires/delete/{id}")
+        @GetMapping("api/comments/delete/{id}")
         public ResponseEntity deleteCommentaire(@PathVariable("id") Long id);
 
-        @RequestMapping("api/commentaires/{id}")
+        @RequestMapping("api/comments/{id}")
         public ResponseEntity getCommentaireById(@PathVariable("id") Long id);
 
         }

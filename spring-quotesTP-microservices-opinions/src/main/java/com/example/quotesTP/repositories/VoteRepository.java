@@ -23,6 +23,6 @@ public interface VoteRepository extends JpaRepository<Vote, Long>{
 		long countByQuote_Author_Id(Long authorId) throws DataAccessException;
 
 		//select quote_id from vote where vote=1 group by quote_id order by count(*) desc limit 10;
-		@Query(value = "SELECT quote_id FROM vote WHERE vote=1 GROUP BY quote_id ORDER BY count(*) DESC LIMIT 10", nativeQuery = true)
+		@Query(value = "SELECT quote_id FROM votes WHERE vote=1 GROUP BY quote_id ORDER BY count(*) DESC LIMIT 10", nativeQuery = true)
 		List<Long> findTenMostUpVotedQuotesIds() throws DataAccessException;
 }

@@ -25,6 +25,6 @@ public interface QuotesRestConsumer {
         @GetMapping("api/quotes/{id}")
         public ResponseEntity getQuoteById(@PathVariable("id") Long id);
 
-        @GetMapping("api/author/{id}")
+        @GetMapping("api/quotes/author/{id}")
         public ResponseEntity getQuotesByAuthorId(@PathVariable("id") Long id);
 }

@@ -64,7 +64,7 @@ public class RestRestController {
         return qconsumer.getQuoteById(id);
     }
 
-    @GetMapping("api/author/{id}")
+    @GetMapping("api/quotes/author/{id}")
     public ResponseEntity findQuotesByAuthorId(@PathVariable("id") Long id) { return qconsumer.getQuotesByAuthorId(id); }
 
 
@@ -91,31 +91,31 @@ public class RestRestController {
         return oconsumer.getVoteById(id);
     }
 
-    @GetMapping("api/upvoteRatio/author/{id}")
+    @GetMapping("api/votes/upvoteRatio/author/{id}")
     public ResponseEntity findAuthorUpvoteRatio(@PathVariable("id") Long id) { return oconsumer.getAuthorUpvoteRatio(id); }
 
-    @GetMapping("api/downvoteRatio/author/{id}")
+    @GetMapping("api/votes/downvoteRatio/author/{id}")
     public ResponseEntity findAuthorDownvoteRatio(@PathVariable("id") Long id) { return oconsumer.getAuthorDownvoteRatio(id); }
 
-    @GetMapping("api/mostUpvotedQuotes")
+    @GetMapping("api/votes/mostUpvotedQuotes")
     public ResponseEntity findMostUpvotedQuotes() { return oconsumer.getMostUpvotedQuotes(); }
 
-    @GetMapping("api/commentaires")
+    @GetMapping("api/comments")
     public ResponseEntity<List<Commentaire>> findAllCommentaire(){
         return oconsumer.getAllCommentaire();
     }
 
-    @GetMapping("api/commentaires/new")
+    @GetMapping("api/comments/new")
     public ResponseEntity newCommentaire(@RequestBody Commentaire commentaire){
         return oconsumer.createCommentaire(commentaire);
     }
 
-    @GetMapping("api/commentaires/delete/{id}")
+    @GetMapping("api/comments/delete/{id}")
     public ResponseEntity suppressCommentaire(@PathVariable("id") Long id){
         return oconsumer.deleteCommentaire(id);
     }
 
-    @RequestMapping("api/commentaires/{id}")
+    @RequestMapping("api/comments/{id}")
     public ResponseEntity findCommentaireById(@PathVariable("id") Long id){
         return oconsumer.getCommentaireById(id);
     }
