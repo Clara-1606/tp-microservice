@@ -1,14 +1,11 @@
-package model;
+package com.example.quotesTP.model;
 
-import com.example.quotesTP.models.Author;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import model.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;

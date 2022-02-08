@@ -1,7 +1,8 @@
-package rest;
+package com.example.quotesTP.rest;
 
-import com.example.quotesTP.models.Commentaire;
-import com.example.quotesTP.models.Vote;
+
+import com.example.quotesTP.model.Commentaire;
+import com.example.quotesTP.model.Vote;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

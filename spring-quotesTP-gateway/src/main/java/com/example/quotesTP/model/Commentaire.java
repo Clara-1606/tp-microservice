@@ -1,18 +1,16 @@
-package model;
+package com.example.quotesTP.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
-import com.example.quotesTP.models.Author;
-import com.example.quotesTP.models.Quote;
 import lombok.Getter;
 import lombok.Setter;
-import model.BaseEntity;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "commentaires")
+public
 class Commentaire extends BaseEntity {
     @Column(name = "commentaire")
     @NotEmpty

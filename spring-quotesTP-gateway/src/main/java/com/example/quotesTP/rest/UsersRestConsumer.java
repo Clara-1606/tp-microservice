@@ -1,7 +1,7 @@
-package rest;
+package com.example.quotesTP.rest;
 
 
-import com.example.quotesTP.models.Author;
+import com.example.quotesTP.model.Author;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import java.util.List;
 @FeignClient(name = "users-service")
 public interface UsersRestConsumer {
     @GetMapping("/api/authors")
-    public ResponseEntity<List<Author>>  getAllAuthors();
+    public ResponseEntity<List<Author>> getAllAuthors();
 
     @GetMapping("/api/authors/new")
     public ResponseEntity createAuthor();

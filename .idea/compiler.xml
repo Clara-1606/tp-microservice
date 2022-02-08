@@ -8,10 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-quotesTP-microservices-quotes" />
+        <module name="spring-quotesTP-rest" />
         <module name="spring-quotesTP-microservices-opinions" />
         <module name="spring-quotesTP-service-discovery" />
-        <module name="spring-quotesTP-microservices-users" />
         <module name="spring-quotesTP-gateway" />
+        <module name="spring-quotesTP-microservices-users" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="spring-quotesTP-microservices-opinions" target="11" />
       <module name="spring-quotesTP-microservices-quotes" target="11" />
       <module name="spring-quotesTP-microservices-users" target="11" />
+      <module name="spring-quotesTP-rest" target="11" />
       <module name="spring-quotesTP-service-discovery" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -28,6 +30,7 @@
       <module name="spring-quotesTP-microservices-opinions" options="-parameters" />
       <module name="spring-quotesTP-microservices-quotes" options="-parameters" />
       <module name="spring-quotesTP-microservices-users" options="-parameters" />
+      <module name="spring-quotesTP-rest" options="-parameters" />
       <module name="spring-quotesTP-service-discovery" options="-parameters" />
     </option>
   </component>

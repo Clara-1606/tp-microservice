@@ -1,8 +1,7 @@
-package model;
+package com.example.quotesTP.model;
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 
-import com.example.quotesTP.models.Quote;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "votes")
-class Vote extends BaseEntity {
+public class Vote extends BaseEntity {
     @Column(name = "vote")
     private boolean vote;
 

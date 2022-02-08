@@ -1,15 +1,15 @@
-package controller;
+package com.example.quotesTP.controller;
 
-import com.example.quotesTP.models.Author;
-import com.example.quotesTP.models.Commentaire;
-import com.example.quotesTP.models.Quote;
-import com.example.quotesTP.models.Vote;
+import com.example.quotesTP.model.Author;
+import com.example.quotesTP.model.Commentaire;
+import com.example.quotesTP.model.Quote;
+import com.example.quotesTP.model.Vote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rest.OpinionsRestConsumer;
-import rest.QuotesRestConsumer;
-import rest.UsersRestConsumer;
+import com.example.quotesTP.rest.OpinionsRestConsumer;
+import com.example.quotesTP.rest.QuotesRestConsumer;
+import com.example.quotesTP.rest.UsersRestConsumer;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
-package model;
+package com.example.quotesTP.model;
 
-import com.example.quotesTP.models.Quote;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
