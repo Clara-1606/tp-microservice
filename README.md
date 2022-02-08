@@ -9,9 +9,11 @@ Enfn, le run des images ne sait pas passé comme prévu, nous avions chacun des 
 
 Nous n'avons pas lâché, nous avons tous énormément travaillé, cherché des solutions, cependant nous n'avons pas réussi à finir la partie kubernetes.
 
-Néanmoins vous pouvez fait des fichiers de configuration disponible sur le git que nous pensons correcte, et voici ce qu'on nous aurions voulu faire :
+Néanmoins vous pouvez fait des fichiers de configuration disponible sur le git que nous pensons correctes, et voici ce qu'on nous aurions voulu faire :
+
+## Kubernetes
 ### Mariadb
-## Déploiement
+#### Déploiement
 Tout d'abord il nous faut une mariadb.
 On fait le déploiement d'une mariadb (voir conf)
 Cela nous créer un pod, et on va poiuvoir aller dans le shell
@@ -22,7 +24,7 @@ On créer notre base de données "quotes".
 ```sh
 CREATE DATABASE quotes;
 ```
-## Service
+#### Service
 On doit ensuite on doit créer notre service
 ```sh
 kubectl expose deployment/mariadb --type=“ClusterIP” --port=3306
@@ -74,7 +76,7 @@ Cela creer :
 
 On retrouve toutes les confs helm :
 ```sh
-Helm list --all-namespaces
+helm list --all-namespaces
 ```
 
 On voit le résultat sur : quotes.127.0.0.1.nip.io/quotes
