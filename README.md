@@ -1,15 +1,15 @@
 # tp-microservice
 
 ## Explications
-Malgré nos implications, nous n'avons pas réussi à arriver au bout du projet pour la partie Kubernetes. 
+Malgré notre implication, nous n'avons pas réussi à arriver au bout du projet pour la partie Kubernetes. 
 En effet, nous avons rencontré beaucoup de soucis, tout d'abord avec Java Spring, puis avec Hibernate, la création de la gateway et le service discovery pour que tout communique ensemble. 
 Après ça, nous avons rencontré des difficultés à build les images dockers, puis les push sur le docker hub (elles sont disponibles ici : https://hub.docker.com/search?q=bastienbrunet&type=image) 
 
 Enfn, le run des images ne sait pas passé comme prévu, nous avions chacun des erreurs différentes. Soit le service discovery fonctionnait, mais pas les microservices, soit l'inverse, et de même pour la gateway.
 
-Nous n'avons pas lâché, nous avons tous énormément travaillé, cherché des solutions, cependant nous n'avons pas réussi à finir la partie kubernetes.
+Nous n'avons pas lâché, nous avons tous énormément travaillé, cherché des solutions quoiqu'il arrive.
 
-Néanmoins vous pouvez fait des fichiers de configuration disponible sur le git que nous pensons correctes, et voici ce qu'on nous aurions voulu faire :
+Néanmoins vous pouvez retrouver des fichiers de configuration disponible sur le git que nous pensons correctes pour notre projet (que nous n'avons malheuresement pas pu tester), et voici les démarches que nous aurions voulu faire :
 
 ## Kubernetes
 ### Mariadb
