@@ -81,6 +81,11 @@ helm list --all-namespaces
 
 On voit le résultat sur : quotes.127.0.0.1.nip.io/quotes
 
+On installe des déploiements qui ont mis en ligne des pods, on expose les déploiements grâce à un service, et on expose ses services à l’extérieur grâce à une route (un ingress) qui est managé par un ingresscontroller
+
+Le service effectue son travail de load Balancer
+
+
 ## Membres du projet :
   - Bastien BRUNET
   - Nans KARAYANNIDIS
