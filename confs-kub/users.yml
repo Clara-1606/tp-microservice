@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quotes-users
+  labels:
+    app: quotes-users
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quotes-users
+  template:
+    metadata:
+      labels:
+        app: quotes-users
+    spec:
+      containers:
+      - name: quotes-users
+        image: bastienbrunet/tp-microservices-b3-users
+        env:
+          - name: SPRING_DATASOURCE_URL
+            value: jdbc:mysql://mariadb/quotes?useUnicode=true
+           - name: spring.jpa.hibernate.ddl-auto
+            value: update
+          - name: SPRING_DATASOURCE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mariadb-root-password
+                value: root-password
+        ports:
+        - containerPort: 8082

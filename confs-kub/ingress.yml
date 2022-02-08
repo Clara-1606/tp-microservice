@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quotes-gateway
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: quotes.127.0.0.1.nip.io
+      http:
+        paths:
+          - path: /quotes
+            pathType: Prefix
+            backend:
+              service:
+                name: quotes-gateway
+                port:
+                  number: 8080
+

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quotes-gateway
+  labels:
+    app: quotes-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quotes-gateway
+  template:
+    metadata:
+      labels:
+        app: quotes-gateway
+    spec:
+      containers:
+      - name: quotes-gateway
+        env:
+          - name: feign.usersServiceURL
+            value: http://quotes-users:8080
+          - name: feign.opinionsServiceURL
+            value: http://quotes-opinions:8080
+          - name: feign.quotesServiceURL
+            value: http://quotes-quotes:8080
+        image: bastienbrunet/tp-microservices-b3-gateway
+        ports:
+        - containerPort: 9966
